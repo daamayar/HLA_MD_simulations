@@ -38,13 +38,11 @@ import multiprocessing as mp
 import traceback
 from vmd import atomsel
 
-current_dir = os.getcwd()
-
 
 """
 PLEASE DEFINE THE "namd_dir" VARIABLE JUST BELLOW:
 """
-namd_dir = current_dir
+namd_dir = './namd_dir' # os.getcwd()
 
 
 __author__ = "Diego Amaya"
@@ -206,6 +204,7 @@ if __name__ == "__main__":
         for line in input_file:
             path_input, file = os.path.split(os.path.abspath(line))
             os.chdir(f'{path_input}')
+            print(os.pwd)
             run_VMD(file)
         
         input_file.close()
