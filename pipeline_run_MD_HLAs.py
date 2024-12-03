@@ -72,7 +72,6 @@ def check_input(args):
 
 
 def run_VMD(pdb_file, **kws):
-    print(os.getcwd())
     pdbid = molecule.load('pdb', f'{pdb_file}')
     evaltcl('package require psfgen 2.0')
     evaltcl('resetpsf')
@@ -205,8 +204,7 @@ if __name__ == "__main__":
         for line in input_file:
             path_input, file = os.path.split(os.path.abspath(line))
             os.chdir(f'{path_input}')
-            print(os.getcwd())
-            run_VMD(file)
+            run_VMD(file.strip())
         
         input_file.close()
     except:
