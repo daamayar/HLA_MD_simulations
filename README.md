@@ -8,20 +8,20 @@ python pipeline_run_MD_HLAs.py <list_pdbs.txt>
 
 Some warnings to bear in mind :
 
-    - The script utilizes the directory of the PDB file as working directory, so output will be generated in that directory. 
+- The script utilizes the directory of the PDB file as working directory, so output will be generated in that directory. 
 
-    - This script assumes that the MD calculation will be launched in an OAR-based computation grid. If another resource/task manager
-    is used, please adapt the run_VMD function accordingly.
+- This script assumes that the MD calculation will be launched in an OAR-based computation grid. If another resource/task manager
+is used, please adapt the run_VMD function accordingly.
 
-    - This script needs the VMD-python package (version 3.1.4 tested).
+- This script needs the VMD-python package (version 3.1.4 tested).
 
-    - This script needs the NAMD3 executable and CHARMM36 topology and parameter files. Please change the variable "namd_dir" to 
-    the right directory pointing to these files (all these files must be in the same directory).
+- This script needs the NAMD3 executable and CHARMM36 topology and parameter files. Please change the variable "namd_dir" to 
+the right directory pointing to these files (all these files must be in the same directory).
 
-    - Format example for 'list_pdbs.txt' (1 structure per line):
-      /path/to/A_0201.pdb
-      /path/to/A_1101.pdb
-      /path/to/A_0202.pdb
+- Format example for 'list_pdbs.txt' (1 structure per line):
+    /path/to/A_0201.pdb
+    /path/to/A_1101.pdb
+    /path/to/A_0202.pdb
 
 # **Requirements**
 
