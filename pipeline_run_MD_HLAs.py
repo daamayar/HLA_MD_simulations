@@ -96,10 +96,12 @@ def run_VMD(pdb_file, **kws):
     os.system(f'mv {structure}_autopsf.psf {structure}.psf')
     os.system(f'mv {structure}_autopsf.pdb {structure}.pdb')
     molecule.delete(pdbid)
+
     evaltcl('resetpsf')
     pdbid = molecule.load('pdb', f'{structure}.pdb', 'psf', f'{structure}.psf')
     evaltcl(f'set all [atomselect {pdbid} all]')
     evaltcl(f'$all moveby [vecinvert [measure center $all weight mass]]')
+    evaltcl('resetpsf')
     evaltcl(f'solvate {structure}.psf {structure}.pdb -t 20 -o {structure}_wb')
     evaltcl(f'autoionize -psf {structure}_wb.psf -pdb {structure}_wb.pdb -neutralize -o {structure}_ionized ')
     molecule.delete(pdbid)
