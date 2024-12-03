@@ -79,8 +79,8 @@ def run_VMD(pdb_file, **kws):
 
     #evaltcl(f"autopsf -mol {pdbid} -protein -prefix {pdb_file.split('.')[0]}")
     evaltcl("guesscoord")
-    evaltcl(f"writepdb {{pdb_file.split('.')[0]}}_autopsf.pdb")
-    evaltcl(f"writepsf {{pdb_file.split('.')[0]}}_autopsf.psf")
+    evaltcl(f"writepdb {pdb_file.split('.')[0]}_autopsf.pdb")
+    evaltcl(f"writepsf {pdb_file.split('.')[0]}_autopsf.psf")
     molecule.delete(pdbid)
     pdbid = molecule.load('pdb', f"{pdb_file.split('.')[0]}_autopsf.pdb", 'psf', f"{pdb_file.split('.')[0]}_autopsf.psf")
     
