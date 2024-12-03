@@ -79,7 +79,7 @@ def run_VMD(pdb_file, **kws):
     evaltcl('resetpsf')
     evaltcl(f'topology {namd_dir}/top_all36_prot.rtf')
 
-    evaltcl(f'autopsf -mol {pdbid} -protein -prefix {pdb_file.split('.')[0]}')
+    evaltcl(f"autopsf -mol {pdbid} -protein -prefix {pdb_file.split('.')[0]}")
     molecule.delete(pdbid)
     pdbid = molecule.load('pdb', f'{pdb_file.split('.')[0]}_autopsf.pdb', 'psf', f'{pdb_file.split('.')[0]}_autopsf.psf')
     
