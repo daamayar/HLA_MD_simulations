@@ -73,7 +73,7 @@ def check_input(args):
 
 def run_VMD(pdb_file, **kws):
     pdbid = molecule.load('pdb', f'{pdb_file}')
-    evaltcl('package require psfgen 2.0')
+    evaltcl('package require psfgen')
     evaltcl('resetpsf')
     evaltcl(f'topology {namd_dir}/top_all36_prot.rtf')
 
