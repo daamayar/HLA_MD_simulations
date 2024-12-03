@@ -81,12 +81,12 @@ def run_VMD(pdb_file, **kws):
 
     evaltcl(f"autopsf -mol {pdbid} -protein -prefix {pdb_file.split('.')[0]}")
     molecule.delete(pdbid)
-    pdbid = molecule.load('pdb', f'{pdb_file.split('.')[0]}_autopsf.pdb', 'psf', f'{pdb_file.split('.')[0]}_autopsf.psf')
+    pdbid = molecule.load('pdb', f"{pdb_file.split('.')[0]}_autopsf.pdb", 'psf', f"{pdb_file.split('.')[0]}_autopsf.psf")
     
     evaltcl('package require solvate')
     evaltcl('package require autoionize')
     #liste = [f'{pdb_file.split('.')[0]}']
-    structure = f'{pdb_file.split('.')[0]}'
+    structure = f"{pdb_file.split('.')[0]}"
 
     #for structure in liste:
     os.system(f'mv {structure}_autopsf.psf {structure}.psf')
