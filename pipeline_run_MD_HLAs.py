@@ -204,7 +204,7 @@ if __name__ == "__main__":
         for line in input_file:
             path_input, file = os.path.split(os.path.abspath(line))
             os.chdir(f'{path_input}')
-            print(os.pwd)
+            print(os.getcwd())
             run_VMD(file)
         
         input_file.close()
