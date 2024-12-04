@@ -34,4 +34,6 @@ solvate ${pdb_file}_autopsf.psf ${pdb_file}_autopsf.pdb -t 20 -o ${pdb_file}_sol
 package require autoionize
 autoionize -psf ${pdb_file}_solvate.psf -pdb ${pdb_file}_solvate.pdb -neutralize -o ${pdb_file}_ionized
 
+resetpsf
+
 exit
