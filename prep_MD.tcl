@@ -6,7 +6,7 @@ set namd_dir [lindex $argv 1]
 package require psfgen
 resetpsf
 
-topology $namd_dir/top_all36_prot.rtf
+topology ${namd_dir}/top_all36_prot.rtf
 
 set mol [ molecule new ${pdb_file}.pdb ]
 set sel [atomselect $mol protein]
