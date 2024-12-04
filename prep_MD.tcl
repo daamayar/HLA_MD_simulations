@@ -1,7 +1,7 @@
 ## USAGE: vmd -dispdev text -e prep_MD.tcl -args <file_name> <namd_dir>
 
-set pdb_file [lindex $argv 0]
-set namd_dir [lindex $argv 1]
+#set pdb_file [lindex $argv 0]
+#set namd_dir [lindex $argv 1]
 
 package require psfgen
 resetpsf
