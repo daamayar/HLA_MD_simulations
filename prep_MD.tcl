@@ -3,7 +3,7 @@
 set pdb_file [lindex $argv 0]
 set namd_dir [lindex $argv 1]
 
-package require psfgen 2.0
+package require psfgen
 resetpsf
 
 topology $namd_dir/top_all36_prot.rtf
