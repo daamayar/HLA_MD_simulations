@@ -72,42 +72,7 @@ def check_input(args):
     return input_file
 
 
-def run_VMD(pdb_file, **kws):
-    """
-    pdbid = molecule.load('pdb', f'{pdb_file}')
-    evaltcl('package require psfgen')
-    evaltcl('resetpsf')
-    evaltcl(f'topology {namd_dir}/top_all36_prot.rtf')
-
-    #evaltcl(f"autopsf -mol {pdbid} -protein -prefix {pdb_file.split('.')[0]}")
-    evaltcl("guesscoord")
-    #evaltcl(f"writepdb {pdb_file.split('.')[0]}_autopsf.pdb")
-    #evaltcl(f"writepsf {pdb_file.split('.')[0]}_autopsf.psf")
-    molecule.write(pdbid, "pdb", f"{pdb_file.split('.')[0]}_autopsf.pdb")
-    molecule.write(pdbid, "psf", f"{pdb_file.split('.')[0]}_autopsf.psf")
-    molecule.delete(pdbid)
-    evaltcl('resetpsf')
-    pdbid = molecule.load('pdb', f"{pdb_file.split('.')[0]}_autopsf.pdb", 'psf', f"{pdb_file.split('.')[0]}_autopsf.psf")
-    
-    evaltcl('package require solvate')
-    evaltcl('package require autoionize')
-    #liste = [f'{pdb_file.split('.')[0]}']
-    structure = f"{pdb_file.split('.')[0]}"
-
-    #for structure in liste:
-    os.system(f'mv {structure}_autopsf.psf {structure}.psf')
-    os.system(f'mv {structure}_autopsf.pdb {structure}.pdb')
-    molecule.delete(pdbid)
-
-    evaltcl('resetpsf')
-    pdbid = molecule.load('pdb', f'{structure}.pdb', 'psf', f'{structure}.psf')
-    evaltcl(f'set all [atomselect {pdbid} all]')
-    evaltcl(f'$all moveby [vecinvert [measure center $all weight mass]]')
-    evaltcl('resetpsf')
-    evaltcl(f'solvate {structure}.psf {structure}.pdb -t 20 -o {structure}_wb')
-    evaltcl(f'autoionize -psf {structure}_wb.psf -pdb {structure}_wb.pdb -neutralize -o {structure}_ionized ')
-    molecule.delete(pdbid)
-    """
+def run_VMD(pdb_file):
     structure = f"{pdb_file.split('.')[0]}"
     evaltcl(f'set pdb_file "{structure}"')
     evaltcl(f'set namd_dir "{namd_dir}"')
