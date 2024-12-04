@@ -44,6 +44,7 @@ PLEASE DEFINE THE "namd_dir" VARIABLE JUST BELLOW:
 """
 namd_dir = os.getcwd() + '/namd_dir' # os.getcwd()
 
+CWD = os.getcwd()
 
 __author__ = "Diego Amaya"
 __email__ = "diego.amaya-ramirez@inria.fr, diaamayaram@unal.edu.co"
@@ -109,6 +110,7 @@ def run_VMD(pdb_file, **kws):
     """
     #evaltcl('resetpsf')
     structure = f"{pdb_file.split('.')[0]}"
+    os.system(f"vmd -dispdev text -e {CWD}/prep_MD.tcl -args {structure} {namd_dir}")
     pdbid = molecule.load('pdb', f'{structure}_ionized.pdb', 'psf', f'{structure}_ionized.psf')
     evaltcl(f'set all [atomselect {pdbid} all]')
     cell_size = evaltcl('measure minmax $all')
