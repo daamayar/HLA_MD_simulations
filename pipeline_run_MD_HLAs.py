@@ -110,7 +110,7 @@ def run_VMD(pdb_file, **kws):
     """
     #evaltcl('resetpsf')
     structure = f"{pdb_file.split('.')[0]}"
-    evaltcl(f"source {CWD}/prep_MD.tcl -args {structure} {namd_dir}")
+    evaltcl(f"source {CWD}/prep_MD.tcl {structure} {namd_dir}")
     pdbid = molecule.load('pdb', f'{structure}_ionized.pdb', 'psf', f'{structure}_ionized.psf')
     evaltcl(f'set all [atomselect {pdbid} all]')
     cell_size = evaltcl('measure minmax $all')
