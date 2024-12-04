@@ -108,7 +108,6 @@ def run_VMD(pdb_file, **kws):
     evaltcl(f'autoionize -psf {structure}_wb.psf -pdb {structure}_wb.pdb -neutralize -o {structure}_ionized ')
     molecule.delete(pdbid)
     """
-    #evaltcl('resetpsf')
     structure = f"{pdb_file.split('.')[0]}"
     evaltcl(f'set pdb_file "{structure}"')
     evaltcl(f'set namd_dir "{namd_dir}"')
@@ -220,7 +219,7 @@ if __name__ == "__main__":
         input_file = check_input(sys.argv[1:])
         
         for line in input_file:
-            path_input, file = os.path.split(os.path.abspath(line))
+            path_input, file = os.path.split(line)
             os.chdir(f'{path_input}')
             run_VMD(file.strip())
         
