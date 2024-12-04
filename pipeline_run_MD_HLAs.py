@@ -72,6 +72,7 @@ def check_input(args):
 
 
 def run_VMD(pdb_file, **kws):
+    """
     pdbid = molecule.load('pdb', f'{pdb_file}')
     evaltcl('package require psfgen')
     evaltcl('resetpsf')
@@ -105,8 +106,9 @@ def run_VMD(pdb_file, **kws):
     evaltcl(f'solvate {structure}.psf {structure}.pdb -t 20 -o {structure}_wb')
     evaltcl(f'autoionize -psf {structure}_wb.psf -pdb {structure}_wb.pdb -neutralize -o {structure}_ionized ')
     molecule.delete(pdbid)
-
-    evaltcl('resetpsf')
+    """
+    #evaltcl('resetpsf')
+    structure = f"{pdb_file.split('.')[0]}"
     pdbid = molecule.load('pdb', f'{structure}_ionized.pdb', 'psf', f'{structure}_ionized.psf')
     evaltcl(f'set all [atomselect {pdbid} all]')
     cell_size = evaltcl('measure minmax $all')
