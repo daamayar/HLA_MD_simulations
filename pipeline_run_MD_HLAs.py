@@ -110,7 +110,7 @@ def run_VMD(pdb_file, **kws):
     """
     #evaltcl('resetpsf')
     structure = f"{pdb_file.split('.')[0]}"
-    evaltcl(f'set structure "{structure}"')
+    evaltcl(f'set pdb_file "{structure}"')
     evaltcl(f'set namd_dir "{namd_dir}"')
     evaltcl(f"source {CWD}/prep_MD.tcl")
     pdbid = molecule.load('pdb', f'{structure}_ionized.pdb', 'psf', f'{structure}_ionized.psf')
