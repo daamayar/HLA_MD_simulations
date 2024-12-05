@@ -42,7 +42,7 @@ from vmd import atomsel
 """
 PLEASE DEFINE THE "namd_dir" VARIABLE JUST BELLOW:
 """
-namd_dir = os.getcwd() + '/namd_dir' # os.getcwd()
+namd_dir = os.getcwd() + '/namd_dir'
 
 CWD = os.getcwd()
 
