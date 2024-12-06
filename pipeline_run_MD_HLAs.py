@@ -175,7 +175,7 @@ def run_VMD(pdb_file):
     run.close()
     os.system(f'chmod +x run_MD_{structure}.sh')
     cluster_list = ['graffiti' , 'gruss', 'grue', 'grat']
-    os.system(f"oarsub --notify mail:diego.amaya-ramirez@inria.fr -n {pdb_file.split('.')[0]} -q production -p 'cluster in ({', '.join(cluster_list)})' -l host=1/gpu=1,walltime=96 ./run_MD_{structure}.sh")
+    os.system(f"oarsub --notify mail:diego.amaya-ramirez@inria.fr -n {pdb_file.split('.')[0]} -q production -p 'cluster in ({', '.join(cluster_list)})' -l host=1/gpu=1,walltime=16 ./run_MD_{structure}.sh")
     molecule.delete(pdbid)
 
 
