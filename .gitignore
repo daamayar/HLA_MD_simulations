@@ -1,6 +1,5 @@
 namd_dir/namd3
 MDs/
-PDBs/
 *~
 log*
 *bkp
