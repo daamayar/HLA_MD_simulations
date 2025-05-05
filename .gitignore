@@ -1,1 +1,8 @@
 namd_dir/namd3
+MDs/
+PDBs/
+*~
+log*
+*bkp
+authorized_keys
+fastas/

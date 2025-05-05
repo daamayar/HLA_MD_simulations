@@ -1,2 +1,2 @@
-/mnt/c/Users/vivir/Desktop/VS_code/HLA_MD_simulations/PDBs/A_0102/A_0102_AF.pdb
-/mnt/c/Users/vivir/Desktop/VS_code/HLA_MD_simulations/PDBs/A_0211/A_0211_AF.pdb
+/home/damaya/capsid_new/HLA_MD_simulations/PDBs/B_1506_AF.pdb
+/home/damaya/capsid_new/HLA_MD_simulations/PDBs/B_1527_AF.pdb
