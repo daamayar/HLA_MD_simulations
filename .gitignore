@@ -8,3 +8,4 @@ fastas/
 Martini+cg2all.ipynb
 *test
 AF_results/
+convert_cif2pdb.py
